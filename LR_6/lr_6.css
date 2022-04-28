@@ -1,0 +1,278 @@
+.order {
+    margin-top: 10px;
+    margin-left: -200px;
+    position: relative;
+    font-size: 24px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.fullwrap {
+    position: relative;
+    margin-top: 70px;
+    margin-left: 100px;
+    height: 567px;
+    width: 1212px;
+    border: 2px solid rgb(230, 230, 230);
+}
+
+.card {
+    position: relative;
+    float: left;
+    height: 563px;
+    width: 299px;
+    border: 2px solid rgb(230, 230, 230);
+}
+
+.line hr {
+    margin-top: 117px;
+    width: 254px;
+    border: 0px solid rgb(230, 230, 230);
+    border-top-width: 2px;
+}
+
+.category,
+.detailed {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    overflow-x: hidden;
+    margin-left: 20px;
+    margin-right: 20px;
+    text-align: center;
+    position: absolute;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+.category {
+    margin-top: 45px;
+    height: 117px;
+    width: 259px;
+}
+
+.detailed {
+    margin-top: 250px;
+    width: 259px;
+    color: rgb(6, 155, 225);
+}
+
+.button_slide,
+.button_slide_1 {
+    font-weight: bold;
+    color: rgb(230, 230, 230);
+    font-size: 37px;
+    text-align: center;
+    background-color: white;
+    margin-top: 92px;
+    border-radius: 50%;
+    position: absolute;
+    width: 43px;
+    height: 43px;
+    border: 4px solid rgb(230, 230, 230);
+}
+
+.button_slide {
+    margin-left: -24px;
+}
+
+.button_slide_1 {
+    margin-left: 275px;
+}
+
+.button_slide:active,
+.button_slide_1:active {
+    background: rgb(230, 230, 230);
+    color: black;
+    box-shadow: inset 0 0 0 3px #3a7999;
+    border: 4px solid black;
+}
+
+.button_slide:hover,
+.button_slide_1:hover {
+    background: rgb(230, 230, 230);
+    color: black;
+    box-shadow: inset 0 0 0 3px #3a7999;
+}
+
+.photo,
+.photo_1,
+.photo_2,
+.photo_3 {
+    position: absolute;
+    margin-top: 20px;
+    margin-left: 20px;
+    height: 200px;
+    width: 259px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.photo {
+    background-image: url("pictures/asus.jpg");
+}
+
+.photo_1 {
+    background-image: url("pictures/lenovo.jpg");
+}
+
+.photo_2 {
+    background-image: url("pictures/Acer.jpg");
+}
+
+.photo_3 {
+    background-image: url("pictures/HP.jpg");
+}
+
+.buy,
+.buy_1,
+.buy_2,
+.buy_3 {
+    margin-top: 360px;
+    position: absolute;
+    margin-left: 62px;
+    margin-right: 48px;
+    height: 49px;
+    width: 172px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 14px;
+    overflow: hidden;
+}
+
+.buy {
+    line-height: 24px;
+    color: white;
+    background-color: rgb(204, 51, 153);
+}
+
+.buy_1,
+.buy_2,
+.buy_3 {
+    line-height: 50px;
+    background-color: rgb(240, 229, 36);
+}
+
+.buy_1:active,
+.buy_2:active,
+.buy_3:active {
+    background: rgb(230, 230, 230);
+    color: black;
+    box-shadow: inset 0 0 0 3px #000000;
+}
+
+.buy_1:hover,
+.buy_2:hover,
+.buy_3:hover {
+    background: rgb(33, 201, 164);
+    color: black;
+}
+
+#price,
+#price_1,
+#money,
+#money_1,
+#price_crossed {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    text-transform: uppercase;
+    position: absolute;
+    width: 172px;
+}
+
+#price {
+    margin-left: 30px;
+    margin-top: 320px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+#price_1 {
+    margin-left: 90px;
+    margin-top: 320px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+#price_crossed {
+    margin-left: 40px;
+    margin-top: 325px;
+    font-size: 12px;
+    text-decoration: line-through;
+    font-weight: bold;
+}
+
+#money,
+#money_1 {
+    font-size: 14px;
+}
+
+#money {
+    margin-top: 320px;
+    margin-left: 80px;
+}
+
+#money_1 {
+    margin-top: 320px;
+    margin-left: 140px;
+}
+
+.detailed_link {
+    color: rgb(6, 155, 225);
+    text-decoration: none;
+}
+
+.detailed_link:hover {
+    color: rgb(0, 0, 0);
+}
+
+.category_link {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}
+
+.category_link:hover {
+    text-decoration: underline;
+}
+
+.sticker {
+    line-height: 20px;
+    position: absolute;
+    margin-top: -46px;
+    margin-left: 200px;
+    position: absolute;
+    width: 85px;
+    height: 85px;
+    border-radius: 50%;
+    border: 4px solid white;
+}
+
+.sticker_green {
+    background: rgb(134, 176, 34);
+}
+
+.sticker_blue {
+    background: rgb(0, 157, 225);
+}
+
+.sticker_text,
+.sticker_text_1 {
+    width: 85px;
+    height: 85px;
+    border-radius: 50%;
+    color: white;
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.sticker_text {
+    margin-top: 30px;
+}
+
+.sticker_text_1 {
+    margin-top: 20px;
+}
