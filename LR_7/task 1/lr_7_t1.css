@@ -1,0 +1,50 @@
+.wrap {
+    width: 744px;
+    height: 248px;
+    display: inline-block;
+}
+
+.bg-email,
+.bg-facebook,
+.bg-instagram,
+.bg-skype,
+.bg-twitter,
+.bg-youtube {
+    float: left;
+    width: 114px;
+    height: 114px;
+    border-radius: 50%;
+}
+
+.bg-email {
+    background: url('css_sprites.png') -10px -10px;
+}
+
+.bg-facebook {
+    background: url('css_sprites.png') -144px -10px;
+}
+
+.bg-instagram {
+    background: url('css_sprites.png') -10px -144px;
+}
+
+.bg-skype {
+    background: url('css_sprites.png') -144px -144px;
+}
+
+.bg-twitter {
+    background: url('css_sprites.png') -278px -10px;
+}
+
+.bg-youtube {
+    background: url('css_sprites.png') -278px -144px;
+}
+
+.bg-email:hover,
+.bg-facebook:hover,
+.bg-instagram:hover,
+.bg-skype:hover,
+.bg-twitter:hover,
+.bg-youtube:hover {
+    border-radius: 0%;
+}

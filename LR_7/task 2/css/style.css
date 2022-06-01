@@ -1,0 +1,264 @@
+/*
+* Background Images - Practice
+* CSS Styles
+*
+*/
+
+@font-face {
+    font-family: 'Metal Mania';
+    src: url(https://fonts.gstatic.com/s/metalmania/v22/RWmMoKWb4e8kqMfBUdPFJdXLiaQ6DQ.woff2);
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 300;
+    font-stretch: 100%;
+    src: url(https://fonts.gstatic.com/s/opensans/v28/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsiH0B4taVIGxA.woff2) format('woff2');
+    unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+
+
+.container {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+/* General */
+
+/* Header */
+header {
+    width: 100%;
+    background-image: url(../img/bg-01.jpg);
+    height: 430px;
+    background-size: cover;
+    background-position: 0 690px;
+}
+
+.menu {
+    display: flex;
+    width: 1220px;
+    margin-left: -261px;
+    padding-left: 277px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    text-transform: uppercase;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.menu li a {
+    display: block;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    min-width: 50px;
+    padding: 0 20px;
+    text-decoration: none;
+}
+
+.menu li a:hover {
+    background-color: #ba1b34;
+}
+
+.container h1 {
+    margin-top: 90px;
+    text-align: center;
+    color: white;
+    font-size: 100px;
+    font-family: 'Metal Mania';
+}
+
+
+.button,
+button {
+    display: block;
+    margin: 65px auto 0 auto;
+    width: 280px;
+    height: 55px;
+    text-decoration: none;
+    text-align: center;
+    font-family: 'Open Sans';
+    text-transform: uppercase;
+    color: white;
+    line-height: 55px;
+    background: linear-gradient(to right, #e1060d, #ce262c, #fc3165);
+}
+
+/* Tour */
+#tour {
+    background-image: url(../img/bg.png);
+    background-color: #383838;
+}
+
+
+.container h2 {
+    padding: 30px 0;
+    font-size: 20px;
+    font-family: 'Open Sans';
+    color: #cfcfcf;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.flex {
+    display: flex;
+    justify-content: center;
+
+}
+
+.tour-card {
+    display: inline-block;
+    margin-right: 18px;
+    margin-left: 13px;
+    width: 205px;
+    height: 200px;
+    color: rgb(125, 125, 125);
+    padding: 40px 0 0 10px;
+}
+
+.madrid {
+    background-image: url(../img/tour/madrid.jpg);
+    background-color: rgba(0, 0, 0, 0.459);
+}
+
+.turin {
+    background-image: url(../img/tour/turin.jpg);
+    background-color: rgba(0, 0, 0, .6);
+}
+
+.hamburg {
+    background-image: url(../img/tour/hamburg.jpg);
+    background-color: rgba(0, 0, 0, .1);
+}
+
+.krakow {
+    background-image: url(../img/tour/krakow.jpg);
+    background-color: rgba(0, 0, 0, .1);
+}
+
+.tour-town {
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    color: #e3e3e3;
+    padding-bottom: 13px;
+}
+
+.tour-place {
+    font-family: 'Open Sans';
+    font-size: 14px;
+    color: #e3e3e3;
+    padding-bottom: 12px;
+}
+
+
+.tour-date {
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: italic;
+    font-size: 12px;
+    color: #e3e3e3;
+}
+
+#tour .button {
+    width: 146px;
+    height: 35px;
+    line-height: 35px;
+    margin: 20px auto 0 auto;
+}
+
+/* Gallery */
+.flex_two {
+    display: flex;
+    justify-content: center;
+}
+
+#gallery {
+    padding-bottom: 25px;
+    background-image: url(../img/bg.png);
+    background-color: #383838;
+}
+
+#gallery .photo {
+    display:inline-block;
+    width: 220px;
+    height: 220px;
+    margin-right: 98px;
+    margin-left: 12px;
+    margin-bottom: 110px;
+}
+
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* Subscribe */
+#subscribe {
+    height: 290px;
+    background-image: url(../img/bg-02.jpg);
+    background-color: rgba(0, 0, 0, .5);
+    background-size: 1300px auto;
+    background-size: cover;
+    background-position: 0 660px;
+    padding-top: 45px;
+}
+
+.pitch p {
+    font-family: 'Open Sans';
+    font-size: 14px;
+    color: #e3e3e3;
+    text-align: center;
+}
+
+.subscribe-form {
+    margin-top: 25px;
+    min-height: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.subscribe-form input {
+    border: 1px solid #a2a2a2;
+    width: 220px;
+}
+
+button {
+    height: 44px;
+    width: 125px;
+    margin: 0 0 0 5px;
+    border: none;
+    text-decoration: none;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    color: white;
+    line-height: 44px;
+    background: linear-gradient(to right, #e1060d, #ce262c, #fc3165);
+}
+
+/* Footer */
+footer {
+    height: 100px;
+    background-image: url(../img/bg.png);
+    background-color: #222222;
+}
+
+.social a,
+.copyright {
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.social {
+    padding-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.social .fa {
+    margin-left: 12px;
+    margin-bottom: 20px;
+    display: block;
+}
