@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #aaa;
+}
+
+.container {
+    width: 1440px;
+    margin: 0 auto;
+}
+
+.nav {
+    display: flex;
+    width: 100%;
+    height: 90px;
+    background-color: white;
+    justify-content: space-between;
+}
+
+.project {
+    width: 190px;
+    height: 90px;
+    line-height: 90px;
+    font-size: 30px;
+    margin-left: 240px;
+    color: #59abe3;
+    text-shadow: 1px 1px 1px #59abe3;
+}
+
+.menu {
+    display: flex;
+    min-width: 260px;
+    min-height: 30px;
+    margin-right: 240px;
+    justify-content: right;
+}
+
+.menu a,
+.footer_menu a {
+    min-width: 60px;
+    height: 90px;
+    line-height: 90px;
+    display: block;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.jumbotron {
+    width: 100%;
+    height: 410px;
+    background-image: url(../PR_Landing_page/pictures/jumbotron.jpg);
+    background-size: cover;
+}
+
+.jumbotron p {
+    padding-top: 100px;
+    font-size: 40px;
+    color: white;
+}
+
+.jumbotron a {
+    display: block;
+    color: white;
+    width: 240px;
+    height: 60px;
+    line-height: 60px;
+    margin: 70px auto 0 auto;
+    font-size: 18px;
+    background-color: #fa5ba5;
+    text-decoration: none;
+    border-radius: 30px;
+}
+
+.services {
+    margin: 0 auto;
+    width: 950px;
+}
+
+.title {
+    width: 950px;
+    margin-top: 70px;
+    margin-bottom: 55px;
+    font-size: 30px;
+    color: black;
+}
+
+.block {
+    display: flex;
+    margin-top:30px;
+    margin-bottom: 30px;
+    justify-content: center;
+}
+
+.servdesc img {
+    width: 50px;
+    height: 51px;
+    margin: 0 auto 25px auto;
+}
+
+.servdesc {
+    width: 34%;
+    line-height: 20px;
+    font-size: 15px;
+    margin-right: 30px;
+    margin-left: 20px;
+}
+
+.blog {
+    width: 950px;
+    margin: 90px auto;
+}
+
+.description img {
+    display: block;
+    width: 280px;
+    height: 240px;
+    margin-top: -30px;
+}
+
+.flex{
+    height: 240px;
+}
+
+
+.flex .title {
+    width: 650px;
+    margin: 10px 0 30px 35px;
+    text-align: left;
+    margin-top: -20px;
+}
+
+.flex {font-size: 24px;}
+.title {font-size: 27px;}
+
+.date {
+    margin-bottom: 30px;
+}
+
+.date,
+.text {
+    width: 650px;
+    margin-left: 35px;
+    font-size: 15px;
+    color: #aaa;
+    font-weight: 100;
+    text-shadow: 1px 1px 1px #aaa;
+}
+
+.footer {
+    width: 1440px;
+    height: 245px;
+    background-color: #38404b;
+}
+
+.footer .project {
+    width: 1440px;
+    height: 100px;
+    margin: 0 auto;
+    padding-top: 30px;
+    color: #aaa;
+}
+
+.footer_menu {
+    display: flex;
+    min-width: 260px;
+    min-height: 30px;
+    justify-content: center;
+}
+
+.copyright {
+    font-size: 12px;
+    color: white;
+    font-weight: 100;
+}
+
+.ahref{
+    color: white;
+    font-weight: 100;
+}
+
+.nav, .project, .menu,.menu a, .footer_menu a, .jumbotron, .jumbotron a, .jumbotron p, .services, .title, .block, .servdesc, .flex, .date, .text, .footer_menu, .copyright{
+    font-family:'Raleway';
+}
+
+.services, .title, .block, .servdesc, .servdesc img{
+    border: 2px solid white;
+}
+
+.jumbotron p, .jumbotron a, .copyright, .ahref{
+    text-shadow: 1px 1px 1px white;
+}
+
+.services, .flex, .title, .blog{
+    text-shadow: 1px 1px 1px black;
+}
+
+.menu a, .footer_menu a, .jumbotron, .services, .footer,  .project, .copyright, .blog{
+    text-align: center;
+}
+
+.project, .jumbotron p, .jumbotron a, .title, .flex, .blog{
+    font-weight: bolder;
+}
