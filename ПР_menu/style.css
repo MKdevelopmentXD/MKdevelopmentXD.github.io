@@ -1,0 +1,161 @@
+body {
+    font-family: 'KG No Regrets Solid';
+    background-color: #493931;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+    width: 940px;
+    height: 392px;
+    margin: 25px auto 0 auto;
+    position: relative;
+}
+
+.left {
+    background-image: url('./burger.jpg');
+    width: 330px;
+    background-size: cover;
+    background-position: -76px 0;
+}
+
+.name {
+    height: 212px;
+    width: 335px;
+    text-align: center;
+    background-color: black;
+    color: white;
+    margin: 155px 0 0 -10px;
+}
+
+.name span {
+    line-height: 35px;
+}
+
+h1 {
+    width: 235px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    text-align: center;
+    margin: 0 auto;
+    padding-top: 30px;
+    font-size: 55px;
+    line-height: 43px;
+    text-transform: uppercase;
+}
+
+.total,
+.price_nominal_h,
+.price_nominal {
+    text-transform: uppercase;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+    color: #fdca19;
+}
+
+.price_nominal_h,
+.price_nominal {
+    color: white;
+}
+
+/* right */
+.right {
+    width: 610px;
+    padding: 42px 50px;
+    background-color: white;
+}
+
+h2 {
+    font-size: 20px;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 40px;
+    color: #474747;
+}
+
+.block {
+    position: relative;
+    width: 202px;
+    min-height: 60px;
+    line-height: 25px;
+    text-align: center;
+    border-bottom: 1px solid #d5d5d5;
+    margin: 10px 0 10px 0;
+}
+
+.block::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #d5d5d5;
+    bottom: -5px;
+    left: 95px;
+    transform: rotate(45deg);
+}
+
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+h3 {
+    text-transform: uppercase;
+    font-weight: 500;
+    color: #474747;
+    font-size: 20px;
+}
+
+.price,
+.block .price_nominal {
+    font-weight: bold;
+    color: #9e9e9e;
+}
+
+.price {
+    font-size: 18px;
+}
+
+.normal {
+    text-transform: none;
+}
+
+.button {
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: -65px;
+    width: 175px;
+    height: 55px;
+    line-height: 55px;
+    text-decoration: none;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: white;
+    background-color: black;
+}
+
+.button:hover {
+    background-color: #ffffff;
+    color: black;
+    border: 2px solid black;
+}
+
+@font-face {
+    font-family: 'KG No Regrets Solid';
+    src: local('KGNoRegretsSolid'),
+        url('KGNoRegretsSolid.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+  }
