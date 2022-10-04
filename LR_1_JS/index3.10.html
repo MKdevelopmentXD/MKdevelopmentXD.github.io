@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кирлик ПІ-19-01</title>
+</head>
+
+<body>
+
+    <script>
+        let students;
+        while (true) {
+            students = +prompt("Введіть кількість студентів:");
+            if (Number.isInteger(students) == false || students <= 0) continue;
+            else break;
+        }
+        let i = 0;
+        while (i < students) {
+            let students = prompt("Введіть прізвище та ім'я студента:");
+
+            if (!students) break;
+            document.write(students + "<br>");
+            i++;
+        }
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кирлик ПІ-19-01</title>
+
+</head>
+
+<body>
+
+    <script>
+        let fNum = prompt("Введіть перше число:");
+        let sNum = prompt("Введіть друге число:");
+
+        if (isNaN(fNum) || isNaN(sNum)) {
+            alert("Введено нечислове значення");
+        } else {
+            fNum == sNum
+                ? alert("Числа рівні")
+                : alert("Більше число: " + Math.max(sNum, fNum));
+        }
+
+    </script>
+</body>
+
+</html>
