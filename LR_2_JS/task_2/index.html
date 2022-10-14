@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Кирлик ПІ 19-01</title>
+</head>
+
+<body>
+
+    <button onclick="openImg()">Click me</button>
+
+    <style>
+        button {
+            width: 300px;
+            height: 80px;
+            border: 2px solid #000000;
+            background-color: rgb(73, 175, 95);
+            font-size: 20px;
+            font-weight: bold;
+            font-family: "Dosis";
+            color: #242929;
+            text-transform: uppercase;
+            margin: 20% auto 0 auto;
+            display: block;
+        }
+
+        button:hover {
+            background-color: rgb(0, 0, 0);
+            color: #ffffff;
+        }
+    </style>
+
+    <script>
+        function openImg() {
+            let questOnOpenWin = confirm("Відкрити інший документ?")
+            questOnOpenWin ? window.open('index_1.html') : window.close()
+        }
+    </script>
+
+</body>
+
+</html>

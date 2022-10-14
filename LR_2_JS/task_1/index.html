@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Кирлик ПІ-19-01</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    
+    <div class="container">
+        <form action="#">
+            <div class="contemt">
+                <div id="inputName">Впишіть сюди своє ім'я </div>
+                <input type="text" onfocus="show()">
+            </div>
+
+            <div>
+                <input type="radio" id="ice" name="inpt" onchange="Change()">
+                <label for="ice" id="icecream">Морозиво</label>
+                <input type="radio" id="choco" name="inpt" onchange="Change()">
+                <label for="choco" id="chocolate">Шоколад</label>
+                <div id="sub">Ви обрали: </div>
+            </div>
+            <button type="submit" onclick="alert('Дякуємо за участь в опитуванні')">Ок</button>
+        </form>
+    </div>
+    <script src="./script.js"> </script>
+</body>
+
+</html>
