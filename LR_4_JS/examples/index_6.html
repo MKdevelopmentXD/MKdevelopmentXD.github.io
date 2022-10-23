@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        body{
+            background-color: #bde0e5;
+        }
+        </style>
+    <script>
+        function checkEmail(str) {
+            if (!str.length)
+                alert("Incorrect e-mail!");
+            /* Якщо рядок пустий, то він не є електронною адресою */
+
+            var re = new RegExp("[a-zA-Z_.]+@{1}[a-zA-Z_.]+[\.]{1}[a-zA-Z_]+");
+
+            str = str.replace(re, "");
+            // замінимо знайдений перший екземпляр шаблону пустим рядком
+            if (!str.length)
+                /* якщо після заміни в рядку не лишиться символів, то записана
+                коректна адреса, про що ми і повідомимо: */
+                alert('Email вірний');
+            else
+                // інакше адреса неправильна
+                alert("Невірно введене значення!");
+        }
+        document.write("emailEmailGmail@gmail.com");
+        checkEmail("emailEmailGmail@gmail.com");
+    </script>
+
+</body>
+
+</html>

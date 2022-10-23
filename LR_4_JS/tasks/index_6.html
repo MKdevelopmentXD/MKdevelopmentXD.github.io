@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кирлик ПІ 19-01</title>
+</head>
+
+
+<body>
+    <style>
+        body {
+            background-color: #bde0e5;
+        }
+    </style>
+
+    <script>
+
+        document.write("Запис виведено в консоль.");
+        function deleteSpaces(testString) {
+            console.log("Текст з пробілами: " + testString);
+            let reg = new RegExp("^ +| +$", "g");
+            if (reg.test(testString)) {
+                testString = testString.replace(reg, "");
+            }
+            console.log("Текст без пробілів: " + testString);
+        }
+        
+        let testString = "    some beautiful Text     ";
+        deleteSpaces(testString);
+    </script>
+
+</body>
+
+</html>

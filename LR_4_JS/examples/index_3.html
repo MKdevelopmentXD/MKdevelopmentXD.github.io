@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        body{
+            background-color: #bde0e5;
+        }
+        </style>
+
+    <script>
+        function removeRedundantSpaces(text_for_Editing) {
+            document.write("Текст: " + text_for_Editing + "Довжина: " + text_for_Editing.length);
+            var extraSpaces = new RegExp("[ ]{2,}", "g");
+            return text_for_Editing.replace(extraSpaces, " ");
+        }
+        let result = removeRedundantSpaces("  Some  Text  there  ");
+        document.write("<br>" + "Результат виконання функції: " + result + "Довжина:" + result.length);
+    </script>
+</body>
+
+</html>

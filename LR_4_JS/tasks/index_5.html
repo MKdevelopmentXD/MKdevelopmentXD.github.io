@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кирлик ПІ 19-01</title>
+</head>
+
+
+<body>
+    <style>
+        body {
+            background-color: #bde0e5;
+        }
+    </style>
+
+    <script>
+
+        document.write("Запис виведено в консоль.");
+        function deleteTags(testString) {
+            console.log("Рядок до змін: " + testString);
+            let reg = new RegExp("<p>|</p>|<br>|<font>|</font>|<hr>", "g");
+            if (reg.test(testString)) {
+                testString = testString.replace(reg, "");
+            }
+            console.log("Рядок після змін: " + testString);
+        }
+
+        let testString = "<p>Lorem ipsum dolor <p>sit amet.<hr> Lorem</p> <p>ipsum</p> dolor <font>s</font>it<br> amet consectetur adipisicing elit. </p>";
+        deleteTags(testString);
+    </script>
+
+</body>
+
+</html>
