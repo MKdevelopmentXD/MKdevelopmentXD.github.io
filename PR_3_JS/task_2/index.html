@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <style>
+        body {
+            background-color: #bde0e5;
+            padding: 10px;
+        }
+
+        .spinWheel {
+            margin-top: 10%;
+            margin-left: 25%;
+            position: relative;
+            width: 598px;
+            padding: 10px 40px;
+            border: 1px solid #CCC;
+            border-radius: 15px;
+            background: #eee;
+        }
+
+        .spinWheel img {
+            width: 200px;
+            height: 200px;
+            display: block;
+        }
+
+        .arrow {
+            position: absolute;
+            top: 100px;
+            padding: 0;
+            background: #ddd;
+            border-radius: 15px;
+            border: 1px solid gray;
+            font-size: 24px;
+            line-height: 24px;
+            color: #444;
+            display: block;
+        }
+
+        .arrow:focus {
+            outline: none;
+        }
+
+        .arrow:hover {
+            background: #ccc;
+            cursor: pointer;
+        }
+
+        .prev {
+            left: 7px;
+        }
+
+        .next {
+            right: 7px;
+        }
+
+        .gallery {
+            width: 598px;
+            overflow: hidden;
+        }
+
+        .gallery ul {
+            height: 200px;
+            width: 9999px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            transition: margin-left 500ms;
+            font-size: 0;
+        }
+
+        .gallery li {
+            display: inline-block;
+        }
+    </style>
+
+    <div id="spinWheel" class="spinWheel">
+        <button class="arrow prev">⇦</button>
+        <div class="gallery">
+            <ul>
+                <li><img src="../task_2/img/1.png"></li>
+                <li><img src="../task_2/img/2.png"></li>
+                <li><img src="../task_2/img/3.png"></li>
+                <li><img src="../task_2/img/4.png"></li>
+                <li><img src="../task_2/img/5.png"></li>
+                <li><img src="../task_2/img/6.png"></li>
+                <li><img src="../task_2/img/7.png"></li>
+                <li><img src="../task_2/img/8.png"></li>
+                <li><img src="../task_2/img/9.png"></li>
+                <li><img src="../task_2/img/10.png"></li>
+                <li><img src="../task_2/img/11.png"></li>
+                <li><img src="../task_2/img/12.png"></li>
+                <li><img src="../task_2/img/13.png"></li>
+                <li><img src="../task_2/img/14.png"></li>
+                <li><img src="../task_2/img/15.png"></li>
+            </ul>
+        </div>
+        <button class="arrow next">⇨</button>
+    </div>
+
+    <script>
+
+        let i = 1;
+        for (let li of spinWheel.querySelectorAll('li')) {
+            li.style.position = 'relative';
+            li.insertAdjacentHTML('beforeend', `<span style="position:absolute;left:0;top:0">${i}</span>`);
+            i++;
+        }
+
+        let widthOfPicture= 200; 
+        let visiblePictures = 3; 
+
+        let list = spinWheel.querySelector('ul');
+        let listElems = spinWheel.querySelectorAll('li');
+
+        let position = 0; 
+
+         // зсув ліворуч
+        spinWheel.querySelector('.prev').onclick = function () {
+           
+            position += widthOfPicture* visiblePictures;
+            position = Math.min(position, 0)
+            list.style.marginLeft = position + 'px';
+        };
+
+        // зсув праворуч
+        spinWheel.querySelector('.next').onclick = function () {
+
+            position -= widthOfPicture* visiblePictures;
+            position = Math.max(position, -widthOfPicture* (listElems.length - visiblePictures));
+            list.style.marginLeft = position + 'px';
+        };
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <link rel="stylesheet" href="messages.css">
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <style>
+        body {
+            background-color: #bde0e5;
+            margin: 10px auto;
+            width: 470px;
+        }
+
+        h3 {
+            margin: 0;
+            padding-bottom: .3em;
+            padding-right: 20px;
+            font-size: 1.1em;
+        }
+
+        p {
+            margin: 0;
+            padding: 0 0 .5em;
+        }
+
+        .pane {
+            background: #d9f8ac;
+            padding: 10px 20px 10px;
+            border-top: solid 4px #afeb56;
+            position: relative;
+        }
+
+        .remove-button {
+            position: absolute;
+            font-size: 100%;
+            top: 0;
+            color: rgb(255, 0, 0);
+            right: 10px;
+            display: block;
+            border: none;
+            width: 24px;
+            height: 24px;
+            background: transparent;
+            cursor: pointer;
+        }
+    </style>
+
+    <div>
+        <div class="pane">
+            <h3>Тигр 2 Хеншеля</h3>
+            <p>Танк «Тигр ІІ» (нім. PanzerKampfwagen VI Ausf B Tiger II) або "Королівський тигр" (нім. Königstiger) —
+                німецький важкий танк кінцевого періоду Другої світової війни. Став спадкоємцем танка Tiger I. Серійно
+                вироблявся з березня 1944 й до капітуляції Німеччини у Другій світовій війні. Загалом випущено 489
+                одиниць.</p>
+        </div>
+        <div class="pane">
+            <h3>T-34-85</h3>
+            <p>T-34-85 — радянський середній танк періоду Німецько-радянської війни. Прийнятий на озброєння РСЧА
+                Постановою ДКО № 5020 сс, від 23 січня 1944.
+
+                Є завершальною модифікацією танка Т-34 зразка 1943 р. Нова, простора, тримісна гарматна башта розроблена
+                з використанням конструктивно-технологічних рішень, реалізованих в дослідному танку Т-43. Встановлення
+                більш потужної 85-мм гармати, в поєднанні з низкою конструктивних доробок, значно підвищили бойову
+                ефективність танка Т-34-85, порівняно з попередником Т-34-76.</p>
+        </div>
+        <div class="pane">
+            <h3>Шерман</h3>
+            <p>«Ше́рман» (англ. M4 Sherman) — основний американський середній танк періоду Другої світової війни. Широко
+                використовувався американською армією на всіх театрах бойових дій, а також у великих кількостях
+                постачався союзникам (в першу чергу Великій Британії та СРСР) за програмою ленд-лізу. Після другої
+                світової війни «Шерман» стояв на озброєнні армій багатьох країн світу, а також брав участь у численних
+                збройних конфліктах. В армії США M4 перебував на озброєнні аж до закінчення Корейської війни.
+            </p>
+        </div>
+    </div>
+
+
+    <script>
+        let panes = document.querySelectorAll('.pane');
+
+        for (let pane of panes) {
+            pane.insertAdjacentHTML("afterbegin", '<button class="remove-button">[x]</button>');
+            pane.firstChild.onclick = () => pane.remove();
+        }
+    </script>
+
+</body>
+
+</html>
