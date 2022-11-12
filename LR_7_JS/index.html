@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LR7</title>
+    <link rel="stylesheet" href="style.css">
+    
+
+
+    <script type="text/javascript">
+        function writeStyleSource()
+        {
+            var styleString;
+            var objStyleCodeTextarea;
+            var objStyleCodeTextarea1;
+            objStyleCodeTextarea = document.forms["stylechangeform"].elements["styleSourceCode"];
+            objStyleCodeTextarea1 = document.forms["stylechangeform1"].elements["styleSourceCode1"];
+        
+            if(document.styleSheets == undefined) {
+                styleString = 
+                    "/* Cannot show source because your browser does not \n"+
+                    " * support the document.styleSheets collection. \n"+
+                    " * Here is the default style sheet. */\n\n";
+                styleString += "ul.sample {\n"+
+            "	list-style-type: inherit;\n"+
+            "	list-style-image: inherit;\n"+
+            "	list-style-position: inside;\n"+
+            "}\n"+
+            "ol.sample {\n"+
+            "	list-style-type: decimal;\n"+
+            "	list-style-position: inside;\n"+
+            "}\n"+
+            "ol.sample ol {\n"+
+            "	list-style-type: decimal;\n"+
+            "}\n"+
+            "ul.sample li { font-style: italic; }\n"+
+            "ol.sample li { font-style: italic; }\n"+
+            "ol.sample ol li { font-style: normal; }";
+                objStyleCodeTextarea.value = styleString;
+                objStyleCodeTextarea1.value = styleString;
+                return;
+            }
+        
+            styleString = "<style type=\"text/css\">\n";
+            styleString += "ul.sample {\n"+
+                "\tlist-style-type: "+getStyle(/ul.sample/i, 'listStyleType')+";\n"+
+                "\tlist-style-image: "+getStyle(/ul.sample/i, 'listStyleImage')+";\n"+
+                "\tlist-style-position: "+getStyle(/ul.sample/i, 'listStylePosition')+";\n"+
+                "}\n";
+            styleString += "ol.sample {\n"+
+                "\tlist-style-type: "+getStyle(/ol.sample$/i, 'listStyleType')+";\n"+
+                "\tlist-style-position: "+getStyle(/ol.sample$/i, 'listStylePosition')+";\n"+
+                "}\n";
+            styleString += "ol.sample ol {\n"+
+                "\tlist-style-type: "+getStyle(/ol.sample ol/i, 'listStyleType')+";\n"+
+                "}\n";
+            styleString += "ul.sample li { font-style: italic; }\n";
+            styleString += "ol.sample li { font-style: italic; }\n";
+            styleString += "ol.sample ol { font-style: normal; }\n";
+            styleString += "<\/style>";
+            styleString += "\n\n";	
+        
+            styleString += "<ul class=\"sample\">\n";
+            styleString += "  <li>Один<\/li>\n";
+            styleString += "  <li>Два\n";
+            styleString += "    <ul>\n";
+            styleString += "    <li>Два з половиною<\/li>\n";
+            styleString += "    <li>Два з четвертиною<\/li>\n";
+            styleString += "    <\/ul><\/li>\n";
+            styleString += "<\/ul>\n";
+            styleString += "<ol class=\"sample\">\n";
+            styleString += "  <li>Один<\/li>\n";
+            styleString += "  <li>Один\n";
+            styleString += "    <ol>\n";
+            styleString += "    <li>Два<\/li>\n";
+            styleString += "    <li>Три<\/li>\n";
+            styleString += "    <\/ol><\/li>\n";
+            styleString += "<\/ol>\n";
+            
+            document.forms["stylechangeform"].elements["styleSourceCode"].value=styleString;
+            document.forms["stylechangeform1"].elements["styleSourceCode1"].value=styleString;
+        }
+        // toggle a button to simulate radio type buttons
+        function toggleButton(elementObj, idRegex) {
+            var arraySpans = document.body.getElementsByTagName("SPAN");
+            
+            for(var i = 0; i < arraySpans.length; i++)
+            {
+                if(arraySpans[i].id.match(idRegex))
+                {
+                    arraySpans[i].className = 'raised';
+                }
+            }
+            elementObj.className = 'depressed';
+        }
+        
+        // Change the given style property of the given 
+        // selector to the new style value
+        function changeStyle(selectorRegex, styleProperty, newStyle)
+        {
+            var numRules, sheetIndex;
+        
+            if(document.styleSheets == undefined) {
+                return;
+            }
+        
+            sheetIndex = 1;
+            numRules = getRulesObject(sheetIndex).length;
+        
+            for(var i = 0; i < numRules; i++)
+            {
+                if(getRulesObject(sheetIndex)[i].selectorText.match(selectorRegex))
+                {
+                    if(eval("getRulesObject(sheetIndex)[i].style."+styleProperty) != undefined)
+                    {
+                        eval("getRulesObject(sheetIndex)[i].style."+styleProperty+" = '"+newStyle+"'");
+                    }
+                }
+            }
+            writeStyleSource();
+        }
+        
+        // Get the style property of the given selector
+        function getStyle(selectorRegex, styleProperty)
+        {
+            var numRules, sheetIndex;
+        
+            if(document.styleSheets == undefined) {
+                return;
+            }
+            sheetIndex = 1;
+            numRules = getRulesObject(sheetIndex).length;
+        
+            for(var i = 0; i < numRules; i++)
+            {
+                if(getRulesObject(sheetIndex)[i].selectorText.match(selectorRegex))
+                {
+                    if(eval("getRulesObject(sheetIndex)[i].style."+styleProperty) != undefined)
+                    {
+                        return eval("getRulesObject(sheetIndex)[i].style."+styleProperty);
+                    }
+                }
+            }
+            return "";
+        }
+        
+        // This is a cross-browser function to return the rules object
+        // of the style sheet identified by the integer index.
+        // The styleSheets object exists in IE 4, NN 6, and DOM2 browsers,
+        function getRulesObject(sheetIndex)
+        {
+            if(document.styleSheets)
+            {
+                if(document.styleSheets[sheetIndex].cssRules)
+                    return document.styleSheets[sheetIndex].cssRules;
+                else if (document.styleSheets[sheetIndex].rules)
+                    return document.styleSheets[sheetIndex].rules;
+            }
+        }
+        
+        function getSelectedCustomListStyle() {
+            return document.stylechangeform1.olListStyleTypeCustom.options[
+                document.stylechangeform1.olListStyleTypeCustom.selectedIndex].value;
+        }
+
+        function getSelectedCustomListStyle1() {
+            return document.stylechangeform1.olListStyleTypeCustom1.options[
+                document.stylechangeform1.olListStyleTypeCustom1.selectedIndex].value;
+        }
+
+        </script>
+        <style type="text/css">
+            ul.sample {
+                list-style-type: inherit;
+                list-style-image: inherit;
+                list-style-position: inside;
+            }
+            ol.sample {
+                list-style-type: decimal;
+                list-style-position: inside;
+            }
+            ol.sample ol {
+                list-style-type: decimal;
+            }
+            ul.sample li { font-style: italic; }
+            ol.sample li { font-style: italic; }
+            ol.sample ol li { font-style: normal; }ul.image { list-style-type:none; }
+
+            span.depressed {
+                border-style: inset;
+                border-width: 1px;
+                border-color: #CCCCCC;
+                color: black;
+                background-color: #f36a6a;
+                padding: 1px 4px 1px 4px;
+                line-height: 1.4em;
+            }
+            span.raised {
+                border-style: outset;
+                border-width: 1px;
+                border-color: #CCCCCC;
+                color: black;
+                background-color: #F3F3EE;
+                padding: 1px 4px 1px 4px;
+                line-height: 1.4em;
+            }
+            span.depressed:hover {
+                cursor: pointer;
+                background-color: #aea5fd;
+            }
+            span.raised:hover {
+                cursor: pointer;
+                background-color: #aea5fd;
+            }
+            </style>
+
+</head>
+
+<body>
+
+
+
+    <div class="tabs">
+        <div class="tab-header">
+            <div class="tab-h active" data-tab="0">border-radius</div>
+            <div class="tab-h" data-tab="1">list-style-position</div>
+            <div class="tab-h" data-tab="2">list-style-type</div>
+        </div>
+
+        <div class="tabContent">
+
+            <div class="border_radius_app">
+                <div>Верхній лівий радіус:
+
+                    <input type="range" id="rtl" min="0" max="100" value="0">
+                    <input type="text" id="ttl" value="0" disabled>
+                </div>
+                <div>
+                    Верхній правий радіус:
+                    <input type="range" id="rtr" min="0" max="100" value="0">
+                    <input type="text" id="ttr" value="0" disabled>
+                </div>
+
+                <div>
+                    Нижній правий радіус:
+                    <input type="range" id="rbr" min="0" max="100" value="0">
+                    <input type="text" id="tbr" value="0" disabled>
+                </div>
+                <div>
+                    Нижній лівий радіус:
+                    <input type="range" id="rbl" min="0" max="100" value="0">
+                    <input type="text" id="tbl" value="0" disabled>
+                </div>
+
+
+                <div id="block"></div>
+                <textarea></textarea>
+            </div>
+        </div>
+
+        <div class="tabContent">
+            <div class="text_align_app">
+                <form method="get" onsubmit="return false;" name="stylechangeform">
+                <table>
+                    <tr>
+                        <th bgcolor="#f36a6a" colspan="2">Маркований список (UL)</th>
+                    </tr>            
+                    <tr>
+                        <td>list-style-position</td>
+                        <td>
+                         <span id="ulPosition0" class="depressed" onclick="toggleButton(this, /^ulPosition/i);changeStyle(/ul.sample/i, 'listStylePosition', 'inside');">inside</span> <span id="ulPosition1" class="raised" onclick="toggleButton(this, /^ulPosition/i);changeStyle(/ul.sample/i, 'listStylePosition', 'outside');">outside</span>	</td>
+                    </tr>
+                    <tr>
+                        <th bgcolor="#f36a6a" colspan="2">Нумерований список (OL)</th>
+                    </tr>
+                    <tr>
+                        <td>list-style-position</td>
+                        <td>
+                         <span id="olPosition0" class="depressed" onclick="toggleButton(this, /^olPosition/i);changeStyle(/ol.sample$/i, 'listStylePosition', 'inside');">inside</span> <span id="olPosition1" class="raised" onclick="toggleButton(this, /^olPosition/i);changeStyle(/ol.sample$/i, 'listStylePosition', 'outside');">outside</span>	</td>
+                    </tr>
+                    <tr>
+                        <th bgcolor="#f36a6a" colspan="2">Нумерований список (OL) - другий рівень</th>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                        <table border="1" cellpadding="2" cellspacing="0" width="100%">
+                        <tr>
+                            <th bgcolor="#f36a6a" width="100%">Маркований список</th>
+                            <th bgcolor="#f36a6a" width="100%">Нумерований список</th>
+                        </tr>
+                        <tr><td width="50%">
+                            <ul class="sample">
+                            <li>Один</li>
+                            <li>Два
+                                <ul>
+                                <li>Два з половиною
+                                <li>Два з четвертиною
+                                </ul></li>
+                            </ul>
+                        </td><td width="50%">
+                            <ol class="sample">
+                            <li>Один</li>
+                            <li>Один
+                                <ol>
+                                <li>Два
+                                <li>Три
+                                </ol></li>
+                            </ol>
+                        </td></tr></table>
+                        </td>
+                    </tr>
+                    </table>
+                    
+                    <p>Код згенерується нижче
+                    
+                    <p>
+                        <textarea cols="60" rows="14" name="styleSourceCode" style="background-color:#CCCCCC;color:black;">
+                    </textarea>
+                    </form>
+            </div>
+        </div>
+
+        <div class="tabContent">
+            <div class="text_align_app">
+                
+                <select class="style_value" >
+                    
+                </select>
+                <form method="get" onsubmit="return false;" name="stylechangeform1">
+                    <table>
+                        <tr>
+                            <th bgcolor="#f36a6a" colspan="2">Маркований список (UL)</th>
+                        </tr>            
+                        <tr>
+                            <td>list-style-type</td>
+                            <td>
+                             <span id="ulType0" class="depressed" onclick="toggleButton(this, /^ulType/i);changeStyle(/ul.sample/i, 'listStyleType', 'inherit');">inherit</span> <span id="ulType1" class="raised" onclick="toggleButton(this, /^ulType/i);changeStyle(/ul.sample/i, 'listStyleType', 'disc');">disc</span> <span id="ulType2" class="raised" onclick="toggleButton(this, /^ulType/i);changeStyle(/ul.sample/i, 'listStyleType', 'circle');">circle</span> <span id="ulType3" class="raised" onclick="toggleButton(this, /^ulType/i);changeStyle(/ul.sample/i, 'listStyleType', 'square');">square</span> <span id="ulType4" class="raised" onclick="toggleButton(this, /^ulType/i);changeStyle(/ul.sample/i, 'listStyleType', 'none');">none</span>	</td>
+                        </tr>
+                        <tr>
+                            <th bgcolor="#f36a6a" colspan="2">Нумерований список (OL)</th>
+                        </tr>
+                        <tr>
+                            <td>list-style-type</td>
+                            <td>
+                             <span id="olType0" class="depressed" onclick="toggleButton(this, /^olType/i);changeStyle(/ol.sample$/i, 'listStyleType', 'decimal');">decimal</span> <span id="olType1" class="raised" onclick="toggleButton(this, /^olType/i);changeStyle(/ol.sample$/i, 'listStyleType', 'lower-roman');">lower-roman</span> <span id="olType2" class="raised" onclick="toggleButton(this, /^olType/i);changeStyle(/ol.sample$/i, 'listStyleType', 'upper-roman');">upper-roman</span> <span id="olType3" class="raised" onclick="toggleButton(this, /^olType/i);changeStyle(/ol.sample$/i, 'listStyleType', 'lower-alpha');">lower-alpha</span> <span id="olType4" class="raised" onclick="toggleButton(this, /^olType/i);changeStyle(/ol.sample$/i, 'listStyleType', 'upper-alpha');">upper-alpha</span> <span id="olType5" class="raised" onclick="toggleButton(this, /^olType/i);changeStyle(/ol.sample$/i, 'listStyleType', 'lower-greek');">lower-greek</span> <span id="olType6" class="raised" onclick="toggleButton(this, /^olType/i);changeStyle(/ol.sample$/i, 'listStyleType', 'none');">none</span> <span id="olType7" class="raised" onclick="toggleButton(this, /^olType/i);changeStyle(/ol.sample$/i, 'listStyleType', 'inherit');">inherit</span> <span id="olType8" class="raised" onclick="toggleButton(this, /^olType/i);changeStyle(/ol.sample$/i, 'listStyleType', ''+getSelectedCustomListStyle()+'');">custom:</span>	<select name="olListStyleTypeCustom" onchange="toggleButton(document.getElementById('olType8'), /^olType/i); changeStyle(/ol.sample$/i, 'listStyleType', getSelectedCustomListStyle());">
+                        
+                            <option value="decimal-leading-zero">decimal-leading-zero</option>
+                            <option value="lower-latin">lower-latin</option>
+                            <option value="upper-latin">upper-latin</option>
+                            <option value="armenian">armenian</option>
+                            <option value="georgian">georgian</option>
+                            <option value="hebrew">hebrew</option>
+                            <option value="inherit">inherit</option>
+                            <option value="none">none</option>
+                            <option value="cjk-ideographic">cjk-ideographic</option>
+                            <option value="hiragana">hiragana</option>
+                            <option value="katakana">katakana</option>
+                            <option value="hiragana-iroha">hiragana-iroha</option>
+                            <option value="katakana-iroha">katakana-iroha</option>
+                            </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th bgcolor="#f36a6a" colspan="2">Нумерований список (OL) - другий рівень</th>
+                        </tr>
+                        <tr>
+
+                                <tr>
+                                    <td>list-style-type</td>
+                                    <td>
+                                     <span id="subOLType0" class="depressed" onclick="toggleButton(this, /^subOLType/i);changeStyle(/ol.sample ol/i, 'listStyleType', 'decimal');">decimal</span> <span id="subOLType1" class="raised" onclick="toggleButton(this, /^subOLType/i);changeStyle(/ol.sample ol/i, 'listStyleType', 'lower-roman');">lower-roman</span> <span id="subOLType2" class="raised" onclick="toggleButton(this, /^subOLType/i);changeStyle(/ol.sample ol/i, 'listStyleType', 'upper-roman');">upper-roman</span> <span id="subOLType3" class="raised" onclick="toggleButton(this, /^subOLType/i);changeStyle(/ol.sample ol/i, 'listStyleType', 'lower-alpha');">lower-alpha</span> <span id="subOLType4" class="raised" onclick="toggleButton(this, /^subOLType/i);changeStyle(/ol.sample ol/i, 'listStyleType', 'upper-alpha');">upper-alpha</span> <span id="subOLType5" class="raised" onclick="toggleButton(this, /^subOLType/i);changeStyle(/ol.sample ol/i, 'listStyleType', 'none');">none</span> <span id="subOLType6" class="raised" onclick="toggleButton(this, /^subOLType/i);changeStyle(/ol.sample ol/i, 'listStyleType', 'inherit');">inherit</span>	</td>
+                                </tr>
+                                
+
+                        <tr>
+                            <td colspan="2">
+                            <table border="1" cellpadding="2" cellspacing="0" width="100%">
+                            <tr>
+                                <th bgcolor="#f36a6a" width="50%">Маркований список</th>
+                                <th bgcolor="#f36a6a" width="50%">Нумерований список</th>
+                            </tr>
+                            <tr><td width="50%">
+                                <ul class="sample">
+                                <li>Один</li>
+                                <li>Два
+                                    <ul>
+                                    <li>Два з половиною
+                                    <li>Два з четвертиною
+                                    </ul></li>
+                                </ul>
+                            </td><td width="50%">
+                                <ol class="sample">
+                                <li>Один</li>
+                                <li>Один
+                                    <ol>
+                                    <li>Два
+                                    <li>Три
+                                    </ol></li>
+                                </ol>
+                            </td></tr></table>
+                            </td>
+                        </tr>
+                        </table>
+                        
+                        <p>Код згенерується нижче
+                        
+                        <p>
+                            <textarea cols="60" rows="14" name="styleSourceCode1" style="background-color:#CCCCCC;color:black;">
+                        </textarea>
+                        </form>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>

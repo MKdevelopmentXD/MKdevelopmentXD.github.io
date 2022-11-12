@@ -1,0 +1,156 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 18px;
+}
+
+body{
+    background-color: #bde0e5;
+}
+
+input {
+    background-color: white;
+    border: 1px solid silver;
+    color: black;
+    margin-top: 12px;
+}
+
+select {
+    max-width: 120px;
+}
+
+textarea {
+    display: inline-block;
+    min-width: 350px;
+    min-height: 100px;
+    margin-top: 10px;
+    background-color: #CCCCCC;
+}
+
+
+
+.tabs {
+
+    max-width: 800px;
+    border-top: none;
+    margin: 0 auto;
+
+}
+
+.tab-h {
+    width: 200px;
+
+    padding: 5px;
+
+}
+
+.active {
+    border: 1px solid black;
+    border-bottom: none;
+    background-color: #f36a6a;
+    z-index: 10;
+}
+
+.tab-header {
+
+    width: 800px;
+    display: flex;
+    position: relative;
+
+
+}
+
+.tabContent {
+    padding: 20px;
+    max-width: 800px;
+    min-height: 500px;
+    border: 1px solid black;
+    position: relative;
+    top: -1px;
+    display: none;
+}
+
+#block {
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+    background-color: green;
+    margin-top: 15px;
+}
+
+
+
+/*importing google fonts */
+@import url('https://fonts.googleapis.com/css?family=Merriweather');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:600');
+
+
+/* start body of text */
+
+.container {
+    width: 70%;
+    margin: 2%;
+    float: right;
+}
+
+#words {
+    font-family: 'Merriweather', serif;
+    font-size: 18px;
+}
+
+.adjust {
+    float: left;
+    margin: 2%;
+    width: 22%;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 7px;
+}
+
+.adjust p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: .8em;
+}
+
+#value,
+#percent {
+    font-size: 2em;
+    color: #245341;
+}
+
+#myRange {
+    -webkit-appearance: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 10px;
+    background: #dddeee;
+    outline: none;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+
+#myRange::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 17px;
+    height: 17px;
+    border-radius: 30px;
+    background: #222;
+    cursor: pointer;
+}
+
+#myRange::-moz-range-thumb {
+    width: 17px;
+    height: 17px;
+    border-radius: 30px;
+    background: #222;
+    cursor: pointer;
+}
+
+/*-----------------------------------------------*/
+
+
