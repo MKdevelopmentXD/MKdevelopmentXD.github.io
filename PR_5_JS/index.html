@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Список завдань</title>
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+</head>
+
+<body>
+  <section class="greeting">
+    <div class="time-containers">
+      <h2 id="day">Day</h2>
+      <h2 id="month">Mn</h2>
+      <h2 id="year">Yr</h2>
+    </div>
+    <div class="time-container">
+      <span id="hour">Hh</span> :
+      <span id="minute">Mm</span> :
+      <span id="second">Ss</span>
+    </div>
+  </section>
+  <div class="wrapper">
+    <div class="task-input">
+      <img src="bars-icon.svg" alt="icon">
+      <input type="text" placeholder="Додати нове завдання">
+    </div>
+    <div class="controls">
+      <div class="filters">
+        <span class="active" id="all">Всі</span>
+        <span id="pending">Не готове</span>
+        <span id="completed">Готове</span>
+      </div>
+      <button class="clear-btn">Видалити все</button>
+    </div>
+    <ul class="task-box"></ul>
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>
