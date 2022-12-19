@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+<body>
+    <h1 style="color: blueviolet;">
+        Оберіть мови для розробки Web-додатків, які ви знаєте:
+    </h1>
+
+    <style>
+    body{
+        background-color: #bde0e5;
+    }
+    </style>
+    
+  
+    <input type="checkbox" name="lang" 
+        value="HTML">HTML<br>
+      
+    <input type="checkbox" name="lang" 
+        value="JavaScript">JavaScript<br>
+  
+    <input type="checkbox" name="lang" 
+        value="CSS">CSS<br>
+  
+    <input type="checkbox" name="lang" 
+        value="PHP">PHP<br>
+  
+    <button onclick="getValue()"> 
+        Підтвердити вибір
+    </button>
+      
+    <script>
+        function getValue() {
+            var checkboxes = document.getElementsByName('lang');
+            var result = "";
+  
+            for (var i = 0; i < checkboxes.length; i++) {
+                if (checkboxes[i].checked) {
+                    result += checkboxes[i].value + ", ";
+                }
+            }
+            tmpStr = result.substring(0, result.length - 2);
+            document.writeln("<p> Ви обрали такі мови: " + tmpStr + "." + "</p>");
+        }
+    </script>
+</body>
+  
+</html>
